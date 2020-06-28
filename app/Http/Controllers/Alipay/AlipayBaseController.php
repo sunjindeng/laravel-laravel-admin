@@ -8,8 +8,8 @@ use App\Http\Controllers\Alipay\AlipayRsaController;
 class AlipayBaseController extends AlipayRsaController
 {
     const PID = '支付宝后台获取';//合作伙伴ID
-    const REURL = 'http://www.cliyun.cn/alipayReturn';//同步通知地址
-    const NOURL = 'http://www.cliyun.cn/alipayNotify';//异步通知地址
+    const REURL = 'https://www.cliyun.cn/alipayReturn';//同步通知地址
+    const NOURL = 'https://www.cliyun.cn/alipayNotify';//异步通知地址
     const KEY = '支付宝后台获取';
     const PAYGAGEWAY = 'https://mapi.alipay.com/gateway.do';
     const CHECKURL = 'https://mapi.alipay.com/gateway.do?service=notify_verify&partner=' . self::PID . '&notify_id=';

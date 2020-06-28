@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Alipay\AlipayController;
+use App\Http\Controllers\Alipay\{AlipayController,AlipayNotifyController};
+
 
 class TestController extends Controller
 {
@@ -15,6 +16,25 @@ class TestController extends Controller
     public function triceAlipay(Request $request)
     {
         $obj = new AlipayController('RSA2');
+    }
+
+    /*
+     * 支付宝支付同步地址
+     */
+    public function alipayReturn(Request $request)
+    {
+        echo '<pre>';
+        print_r($request->all());
+    }
+
+    /*
+     * 支付宝异步回调
+     */
+
+    private function alipayNotify(Request $request)
+    {
+        $data = $request->all();
+        $obj = new AlipayNotifyController($data);
     }
 
 

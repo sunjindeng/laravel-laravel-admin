@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('alipay','TestController@triceAlipay');
+Route::get('alipayReturn','TestController@alipayReturn');
+Route::post('alipayNotify','TestController@alipayNotify');
