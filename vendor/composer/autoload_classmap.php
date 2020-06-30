@@ -6,6 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Admin\\Controllers\\AuthController' => $baseDir . '/app/Admin/Controllers/AuthController.php',
+    'App\\Admin\\Controllers\\ExampleController' => $baseDir . '/app/Admin/Controllers/ExampleController.php',
+    'App\\Admin\\Controllers\\HomeController' => $baseDir . '/app/Admin/Controllers/HomeController.php',
+    'App\\Admin\\Controllers\\LoginController' => $baseDir . '/app/Admin/Controllers/LoginController.php',
+    'App\\Admin\\Controllers\\UsersController' => $baseDir . '/app/Admin/Controllers/UsersController.php',
+    'App\\Admin\\models\\Users' => $baseDir . '/app/Admin/models/Users.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Alipay\\AlipayBaseController' => $baseDir . '/app/Http/Controllers/Alipay/AlipayBaseController.php',
@@ -863,6 +869,8 @@ return array(
     'Encore\\Admin\\Widgets\\Tab' => $vendorDir . '/encore/laravel-admin/src/Widgets/Tab.php',
     'Encore\\Admin\\Widgets\\Table' => $vendorDir . '/encore/laravel-admin/src/Widgets/Table.php',
     'Encore\\Admin\\Widgets\\Widget' => $vendorDir . '/encore/laravel-admin/src/Widgets/Widget.php',
+    'Encore\\Chartjs\\Chartjs' => $vendorDir . '/laravel-admin-ext/chartjs/src/Chartjs.php',
+    'Encore\\Chartjs\\ChartjsServiceProvider' => $vendorDir . '/laravel-admin-ext/chartjs/src/ChartjsServiceProvider.php',
     'Facade\\FlareClient\\Api' => $vendorDir . '/facade/flare-client-php/src/Api.php',
     'Facade\\FlareClient\\Concerns\\HasContext' => $vendorDir . '/facade/flare-client-php/src/Concerns/HasContext.php',
     'Facade\\FlareClient\\Concerns\\UsesTime' => $vendorDir . '/facade/flare-client-php/src/Concerns/UsesTime.php',

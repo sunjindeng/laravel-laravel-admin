@@ -12,5 +12,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
-
+    $router->resource('users', UsersController::class);
+    $router->resource('chartjs', ChartjsController::class);
+    $router->get('charjsBor', 'ChartjsController@ajaxChartJsBorRequest');
 });
+
