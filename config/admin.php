@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => 'Laravel-admin',
+    'name' => '消费记录管理中心',
 
     /*
     |--------------------------------------------------------------------------
@@ -62,7 +62,7 @@ return [
 
         'namespace' => 'App\\Admin\\Controllers',
 
-        'middleware' => ['web', 'admin'],
+        'middleware' => ['web', 'admin','admin.lock'],
     ],
 
     /*
@@ -393,15 +393,173 @@ return [
     |
     | You can find all available extensions here
     | https://github.com/laravel-admin-extensions.
+    | laravel-admin 扩展配置
     |
     */
     'extensions' => [
-
+        //图形插件
         'chartjs' => [
 
             // Set to `false` if you want to disable this extension
             'enable' => true,
+        ],
+        //phpinfo  web界面
+        'phpinfo' => [
+
+            // Set this to false if you want to disable this extension
+            'enable' => true,
+
+            // What information to show，see http://php.net/manual/en/function.phpinfo.php#refsect1-function.phpinfo-parameters
+            'what' => INFO_ALL, //所有信息
+            // Set access path，defaults to `phpinfo`
+            //'path' => '~phpinfo',
+        ],
+        //laravel-admin  界面变色
+        'material-ui' => [
+            // If the value is set to false, this extension will be disabled
+            'enable' => true
+        ],
+        //编辑器配置(tiny官网地址：http://tinymce.ax-z.cn/)
+        'tinymce' => [
+            // Set to false if you want to disable this extension
+            //
+            'enable' => true,
+            // Editor configuration
+            'config' => [
+                'resize'=> false,//调整编辑器大小,可选值为：true（仅允许改变高度）, false（完全不让你动）, 'both'（宽高都能改变，注意引号）
+                'plugins'=> 'advlist autolink link image lists preview code help fullscreen table autoresize ',   // 插件
+                'toolbar'=> 'undo redo | styleselect | fontsizeselect bold italic | link image blockquote removeformat | indent outdent bullist numlist code',   // 配置工具栏
+                'images_upload_url'=> '/api/v1/images',  //图片上传接口  返回格式：{ location : "/demo/image/1.jpg" }
+            ]
+        ],
+        //CK编辑器配置
+        'ckeditor' => [
+
+            //Set to false if you want to disable this extension
+            'enable' => false,
+
+            // Editor configuration
+            'config' => [
+                "simpleUpload"=>[
+                    "uploadUrl"=>'/admin/uploads'
+                ],
+                "fontSize" => [
+                    "options" =>[
+                        9,
+                        11,
+                        13,
+                        'default',
+                        17,
+                        19,
+                        21
+                    ]
+                ],
+                "toolbar"=>[
+                    "items"=>[
+                        'heading',
+                        'fontFamily',
+                        'fontSize',
+                        'fontColor',
+                        'fontBackgroundColor',
+                        'bold',
+                        'italic',
+                        'link',
+                        'bulletedList',
+                        'numberedList',
+                        '|',
+                        'indent',
+                        'outdent',
+                        '|',
+                        'imageUpload',
+                        'blockQuote',
+                        'insertTable',
+                        'mediaEmbed',
+                        'undo',
+                        'redo'
+                    ]
+                ],
+                'image'=>[
+                    'toolbar'=>['imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight'],
+                    'resizeUnit'=>'px',
+                    'styles'=>[
+                        // This option is equal to a situation where no style is applied.
+                        'full',
+
+                        'side',
+                        // This represents an image aligned to the left.
+                        'alignLeft',
+                        'alignCenter',
+                        // This represents an image aligned to the right.
+                        'alignRight'
+                    ]
+                ],
+
+                "table" =>[
+                    'contentToolbar'=>[
+                        'tableColumn',
+                        'tableRow',
+                        'mergeTableCells'
+                    ]
+                ],
+                'language'=>'zh-cn',
+
+            ]
+        ],
+        'ueditor' => [
+
+            // 如果要关掉这个扩展，设置为false
+            'enable' => false,
+
+            // 编辑器的前端配置 参考：http://fex.baidu.com/ueditor/#start-config
+            'config' => [
+                'initialFrameHeight' => 400, // 例如初始化高度
+            ],
+            // 'field_type' => '自定义名字'
+        ],
+        'wang-editor' => [
+
+            // 如果要关掉这个扩展，设置为false
+            'enable' => false,
+
+            // 编辑器的配置
+            'config' => [
+
+            ]
+        ],
+        //编辑器
+        'simditor' => [
+            // Set to false if you want to disable this extension
+            'enable' => true,
+            // Editor configuration
+            'config' => [
+                'upload' => [
+                    'url' => '/admin/api/upload', # example api route: admin/api/upload
+                    'fileKey' => 'upload_file',
+                    'connectionCount' => 3,
+                    'leaveConfirm' => 'Uploading is in progress, are you sure to leave this page?'
+                ],
+                'tabIndent' => true,
+                'toolbar' => ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment'],
+                'toolbarFloat' => true,
+                'toolbarFloatOffset' => 0,
+                'toolbarHidden' => false,
+                'pasteImage' => true,
+                'cleanPaste' => false,
+            ]
+        ],
+        //数据图形化
+        'sparkline' => [
+
+            // Set to `false` if you want to disable this extension
+            'enable' => true,
+        ],
+        //登录验证码
+        'login-captcha' => [
+            // set to false if you want to disable this extension
+            'enable' => true,
         ]
+
+
     ]
 
 ];

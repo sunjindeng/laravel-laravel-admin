@@ -13,7 +13,9 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('users', UsersController::class);
-    $router->resource('chartjs', ChartjsController::class);
-    $router->get('charjsBor', 'ChartjsController@ajaxChartJsBorRequest');
+    $router->resource('consume', ConsumeController::class);
+    $router->resource('consume_type', ConsumeTypeController::class);
+    $router->get('charjsBor', 'ConsumeController@ajaxChartJsBorRequest');
+    $router->get('/api/consumeTypeList','ApiController@ConsumeTypeList');
 });
 
