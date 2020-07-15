@@ -5,7 +5,7 @@ namespace App\Admin\Controllers;
 
 use App\Admin\models\ConsumeContent;
 use Encore\Admin\Controllers\AdminController;
-use Encore\Admin\Layout\Content;
+//use Encore\Admin\Layout\Content;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -68,7 +68,7 @@ class ConsumeController extends AdminController
             $form->email('email');
         });*/###分组下拉式填写
         //左右分屏
-        $form->column(1/2,function($form){
+       /* $form->column(1/2,function($form){*/
             $form->text('user_id','用户名称')->default(Admin::user()->id)->readonly()->width(200);
             $form->number('price','消费金额')->rules('required')->width(500);
             $consumenTypeController = new ConsumeType();
@@ -81,7 +81,7 @@ class ConsumeController extends AdminController
                 $footer->disableEditingCheck();
                 $footer->disableCreatingCheck();
             });
-        });
+      /*  });*/
        /* $form->column(1/2,function($form){
 
         });*/

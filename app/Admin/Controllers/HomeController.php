@@ -18,20 +18,20 @@ class HomeController extends Controller
             ->header('jQuery sparkline')
             ->body(view('admin.sparkline.bar'))
             ->header('chartjs')->body(view('admin.chartjs'));
-            /*->row(Dashboard::title());*/
+            /*->row(Dashboard::title())*/
             /*->row(function (Row $row) {
 
                 $row->column(4, function (Column $column) {
                     $column->append(Dashboard::environment());
-                });*/
+                });
 
-               /* $row->column(4, function (Column $column) {
+                $row->column(4, function (Column $column) {
                     $column->append(Dashboard::extensions());
                 });
 
                 $row->column(4, function (Column $column) {
                     $column->append(Dashboard::dependencies());
-                });*/
-          /*  });*/
+                });
+            });*/
     }
 }

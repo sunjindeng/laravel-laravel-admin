@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ConsumeContent extends  Model
 {
-    protected $table = 'consume.consume_content';
+    protected $table = 'consume_content';
     public $timestamps = false;
 
     /**

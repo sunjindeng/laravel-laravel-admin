@@ -226,7 +226,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        //添加别名
+        'input' => Illuminate\Support\Facades\Input::class,
+       // 'Request' => Illuminate\Http\Request::class,
     ],
 
 ];

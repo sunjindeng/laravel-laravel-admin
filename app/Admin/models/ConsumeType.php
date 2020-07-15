@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 class ConsumeType extends Model
 {
-    protected $table = 'consume.consume_type';
+    protected $table = 'consume_type';
     public $timestamps = false;
     /**
      * 关联消费详情type
